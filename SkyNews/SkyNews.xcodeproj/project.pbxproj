@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1F9865B01ED5E8D700291C0A /* LSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9865AF1ED5E8D700291C0A /* LSCategory.m */; };
 		1F9865B31ED5E9E700291C0A /* LSCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9865B21ED5E9E700291C0A /* LSCategoriesViewController.m */; };
+		29B99C211ED5F12600624775 /* LSNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B99C201ED5F12600624775 /* LSNewsListViewController.m */; };
+		29B99C241ED5F5EB00624775 /* LSDataProvide.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B99C231ED5F5EB00624775 /* LSDataProvide.m */; };
+		29B99C271ED5F61500624775 /* LSNewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B99C261ED5F61500624775 /* LSNewsItem.m */; };
 		C87D0B994EE29B1E05B0591F /* libPods-SkyNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9B95E01DFACE775DC55648 /* libPods-SkyNews.a */; };
 		F08BA0DA1ED5E502000A600B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F08BA0D91ED5E502000A600B /* main.m */; };
 		F08BA0DD1ED5E502000A600B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F08BA0DC1ED5E502000A600B /* AppDelegate.m */; };
@@ -22,6 +25,12 @@
 		1F9865AF1ED5E8D700291C0A /* LSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSCategory.m; sourceTree = "<group>"; };
 		1F9865B11ED5E9E700291C0A /* LSCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSCategoriesViewController.h; sourceTree = "<group>"; };
 		1F9865B21ED5E9E700291C0A /* LSCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSCategoriesViewController.m; sourceTree = "<group>"; };
+		29B99C1F1ED5F12600624775 /* LSNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNewsListViewController.h; sourceTree = "<group>"; };
+		29B99C201ED5F12600624775 /* LSNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNewsListViewController.m; sourceTree = "<group>"; };
+		29B99C221ED5F5EB00624775 /* LSDataProvide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSDataProvide.h; sourceTree = "<group>"; };
+		29B99C231ED5F5EB00624775 /* LSDataProvide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSDataProvide.m; sourceTree = "<group>"; };
+		29B99C251ED5F61500624775 /* LSNewsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNewsItem.h; sourceTree = "<group>"; };
+		29B99C261ED5F61500624775 /* LSNewsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNewsItem.m; sourceTree = "<group>"; };
 		7BE1C29F5AC32DEE3F8C8042 /* Pods-SkyNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyNews/Pods-SkyNews.release.xcconfig"; sourceTree = "<group>"; };
 		EA7182BAFEA74FA91E017043 /* Pods-SkyNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyNews/Pods-SkyNews.debug.xcconfig"; sourceTree = "<group>"; };
 		F08BA0D51ED5E502000A600B /* SkyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,8 +59,12 @@
 		1F9865AB1ED5E65B00291C0A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29B99C221ED5F5EB00624775 /* LSDataProvide.h */,
+				29B99C231ED5F5EB00624775 /* LSDataProvide.m */,
 				1F9865AE1ED5E8D700291C0A /* LSCategory.h */,
 				1F9865AF1ED5E8D700291C0A /* LSCategory.m */,
+				29B99C251ED5F61500624775 /* LSNewsItem.h */,
+				29B99C261ED5F61500624775 /* LSNewsItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -61,6 +74,8 @@
 			children = (
 				1F9865B11ED5E9E700291C0A /* LSCategoriesViewController.h */,
 				1F9865B21ED5E9E700291C0A /* LSCategoriesViewController.m */,
+				29B99C1F1ED5F12600624775 /* LSNewsListViewController.h */,
+				29B99C201ED5F12600624775 /* LSNewsListViewController.m */,
 			);
 			name = Moduls;
 			sourceTree = "<group>";
@@ -254,7 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B99C241ED5F5EB00624775 /* LSDataProvide.m in Sources */,
 				F08BA0DD1ED5E502000A600B /* AppDelegate.m in Sources */,
+				29B99C211ED5F12600624775 /* LSNewsListViewController.m in Sources */,
+				29B99C271ED5F61500624775 /* LSNewsItem.m in Sources */,
 				F08BA0DA1ED5E502000A600B /* main.m in Sources */,
 				1F9865B01ED5E8D700291C0A /* LSCategory.m in Sources */,
 				1F9865B31ED5E9E700291C0A /* LSCategoriesViewController.m in Sources */,

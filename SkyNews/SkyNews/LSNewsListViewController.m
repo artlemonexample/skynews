@@ -1,23 +1,20 @@
 //
-//  LSCategoriesViewController.m
+//  LSNewsListViewController.m
 //  SkyNews
 //
-//  Created by aleksandr on 24.05.17.
+//  Created by Oleksandr Kurtsev on 24.05.17.
 //  Copyright © 2017 LemonSchool. All rights reserved.
 //
 
-#import "LSCategoriesViewController.h"
-#import "LSCategory.h"
 #import "LSNewsListViewController.h"
+#import "LSDataProvide.h"
 
-@interface LSCategoriesViewController ()
-
-@property (strong) NSArray *categories;
+@interface LSNewsListViewController () 
 
 @end
 
-@implementation LSCategoriesViewController
-        
+@implementation LSNewsListViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,31 +24,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSMutableArray* categoriesArray = [NSMutableArray array];
+    self.navigationItem.title = self.category.title;
     
-    LSCategory* home = [LSCategory new];
-    LSCategory* business = [LSCategory new];
-    LSCategory* politics = [LSCategory new];
-    LSCategory* technology = [LSCategory new];
-    
-    home.title = @"Home";
-    business.title = @"Business";
-    politics.title = @"Politics";
-    technology.title = @"Technology";
-    
-    home.link = @"http://feeds.skynews.com/feeds/rss/home.xml";
-    business.link = @"http://feeds.skynews.com/feeds/rss/business.xml";
-    politics.link = @"http://feeds.skynews.com/feeds/rss/politics.xml";
-    technology.link = @"http://feeds.skynews.com/feeds/rss/technology.xml";
+    [LSDataProvide downloadData:self.category completion:^(NSArray *news) {
+        NSLog(@"123");
+    }];
 
-    [categoriesArray addObject:home];
-    [categoriesArray addObject:business];
-    [categoriesArray addObject:politics];
-    [categoriesArray addObject:technology];
-
-    self.categories = categoriesArray.copy;
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,25 +40,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.categories.count;
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    LSCategory* cellModel = [self.categories objectAtIndex:indexPath.row];
-    cell.textLabel.text = cellModel.title;
-
+    // Configure the cell...
+    
     return cell;
 }
-
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -116,17 +93,14 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    LSNewsListViewController* listViewControl = [segue destinationViewController];
-    
-    NSIndexPath* i = [self.tableView indexPathForCell:sender];
-    LSCategory *category = [self.categories objectAtIndex:i.row];
-    listViewControl.category = category;
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end
