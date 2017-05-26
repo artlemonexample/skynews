@@ -11,6 +11,6 @@
 
 @interface LSDataProvide : NSObject
 
-+ (void)downloadData:(LSCategory*)category completion:(void(^)(NSArray *news))completion;
++ (void)downloadData:(LSCategory*)category completion:(void(^)(NSArray *resultArray))completion;
 
 @end

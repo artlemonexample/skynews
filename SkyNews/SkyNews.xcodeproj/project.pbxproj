@@ -18,6 +18,8 @@
 		F08BA0E31ED5E502000A600B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08BA0E11ED5E502000A600B /* Main.storyboard */; };
 		F08BA0E51ED5E502000A600B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08BA0E41ED5E502000A600B /* Assets.xcassets */; };
 		F08BA0E81ED5E502000A600B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08BA0E61ED5E502000A600B /* LaunchScreen.storyboard */; };
+		FA877BD61ED8A16B0033C1EC /* LSNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA877BD51ED8A16B0033C1EC /* LSNewsTableViewCell.m */; };
+		FA877BD81ED8A4380033C1EC /* placeholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FA877BD71ED8A4380033C1EC /* placeholder.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		F08BA0E41ED5E502000A600B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F08BA0E71ED5E502000A600B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F08BA0E91ED5E502000A600B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA877BD41ED8A16B0033C1EC /* LSNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNewsTableViewCell.h; sourceTree = "<group>"; };
+		FA877BD51ED8A16B0033C1EC /* LSNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNewsTableViewCell.m; sourceTree = "<group>"; };
+		FA877BD71ED8A4380033C1EC /* placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpeg; sourceTree = "<group>"; };
 		FF9B95E01DFACE775DC55648 /* libPods-SkyNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkyNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +81,8 @@
 				1F9865B21ED5E9E700291C0A /* LSCategoriesViewController.m */,
 				29B99C1F1ED5F12600624775 /* LSNewsListViewController.h */,
 				29B99C201ED5F12600624775 /* LSNewsListViewController.m */,
+				FA877BD41ED8A16B0033C1EC /* LSNewsTableViewCell.h */,
+				FA877BD51ED8A16B0033C1EC /* LSNewsTableViewCell.m */,
 			);
 			name = Moduls;
 			sourceTree = "<group>";
@@ -83,6 +90,7 @@
 		1F9865AD1ED5E6DE00291C0A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FA877BD71ED8A4380033C1EC /* placeholder.jpeg */,
 				F08BA0DB1ED5E502000A600B /* AppDelegate.h */,
 				F08BA0DC1ED5E502000A600B /* AppDelegate.m */,
 				F08BA0E11ED5E502000A600B /* Main.storyboard */,
@@ -211,6 +219,7 @@
 				F08BA0E81ED5E502000A600B /* LaunchScreen.storyboard in Resources */,
 				F08BA0E51ED5E502000A600B /* Assets.xcassets in Resources */,
 				F08BA0E31ED5E502000A600B /* Main.storyboard in Resources */,
+				FA877BD81ED8A4380033C1EC /* placeholder.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +285,7 @@
 				F08BA0DA1ED5E502000A600B /* main.m in Sources */,
 				1F9865B01ED5E8D700291C0A /* LSCategory.m in Sources */,
 				1F9865B31ED5E9E700291C0A /* LSCategoriesViewController.m in Sources */,
+				FA877BD61ED8A16B0033C1EC /* LSNewsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

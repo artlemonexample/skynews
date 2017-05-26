@@ -8,8 +8,12 @@
 
 #import "LSNewsListViewController.h"
 #import "LSDataProvide.h"
+#import "LSNewsItem.h"
+#import "LSNewsTableViewCell.h"
 
 @interface LSNewsListViewController () 
+
+@property (strong, nonatomic) NSArray* news;
 
 @end
 
@@ -23,13 +27,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     self.navigationItem.title = self.category.title;
     
-    [LSDataProvide downloadData:self.category completion:^(NSArray *news) {
-        NSLog(@"123");
+    [LSDataProvide downloadData:self.category
+                     completion:^(NSArray *news) {
+        self.news = news;
+        [self.tableView reloadData];
     }];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,24 +44,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.news.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    LSNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    LSNewsItem* currentItem = self.news[indexPath.row];
+    cell.cellTextLabel.text = currentItem.title;
+    cell.cellImageView.image = [UIImage imageNamed:@"placeholder.jpeg"];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

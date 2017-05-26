@@ -15,7 +15,7 @@
 
 @implementation LSDataProvide
 
-+ (void)downloadData:(LSCategory*)category completion:(void(^)(NSArray *news))completion {
++ (void)downloadData:(LSCategory*)category completion:(void(^)(NSArray *resultArray))completion {
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -26,10 +26,11 @@
         NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
         return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        NSArray *result = [self newsArrayFromSN:filePath category:category];
         if (completion) {
-            completion([self newsArrayFromSN:filePath category:category]);
+            completion(result);
         }
-        NSLog(@"%@", filePath);
+        NSLog(@"%@", result);
     }];
     [downloadTask resume];
     
